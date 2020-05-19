@@ -2,17 +2,9 @@ spring:
   datasource:
     driverClassName: org.h2.Driver
     initial-size: 5
-    max-active: 10
-    max-idle: 5
-    min-evictable-idle-time-millis: 60000
-    min-idle: 1
     password: ''
-    test-on-borrow: true
-    test-while-idle: true
-    time-between-eviction-runs-millis: 5000
     url: jdbc:h2:mem:DMO;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
     username: sa
-    validation-query: SELECT 1
   jpa:
     database: h2
     database-platform: org.hibernate.dialect.H2Dialect
