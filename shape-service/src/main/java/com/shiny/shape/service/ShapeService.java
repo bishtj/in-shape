@@ -33,25 +33,28 @@ public class ShapeService {
 
     public com.shiny.shape.user.dto.Square createSquareShape(com.shiny.shape.user.dto.Square square) throws Exception {
         Square entity = mapToEntity(square);
+        // TODO: Could be enhanced in-memory cache (ConcurrentHashMap) or external distributed cache, due to time limitation let us take most basic approach
         checkOverlapWithPersisted(entity);
         try {
             Square resp = squareShapeRepository.save(entity);
             return mapToDto(resp);
 
-        } catch(DataIntegrityViolationException ex) {
+        } catch (DataIntegrityViolationException ex) {
+            log.error("Database operation failed error messgae {}", ex.getMessage());
             throw new ShapeDatabaseException(ex.getMessage());
         }
     }
 
     public void deleteSquareShapes() {
+        log.info("Deleting all square shapes ..");
         squareShapeRepository.deleteAll();
     }
-
 
 
     private void checkOverlapWithPersisted(Square square) throws ShapeOverlapException {
         List<Square> shapes = squareShapeRepository.findAll();
         if (shapes.stream().filter(shape -> shapeOverlapChecker.isOverlap(shape, square)).count() > 0) {
+            log.error("Validation failed shape is overlapping with existing shape");
             throw new ShapeOverlapException("Shape overlapped with existing shape");
         }
     }
