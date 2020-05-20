@@ -5,16 +5,16 @@ This is a sample project to demonstrate a Restful API service for a simple shape
 The current scope is limited to square Shape. A Square shape that is axis-aligned, not rotated.
 
 ## Acceptance Criteria 
-The result of this activity should:
-- expose an endpoint to store a new shape
-- expose an endpoint to retrieve all stored shapes
+* Expose an endpoint to store a new shape
+* Expose an endpoint to retrieve all stored shapes
 
 The repository should enforce that:
-- all shapes have unique names
-- no stored shape overlaps any other stored shapes
+* All shapes have unique names
+* No stored shape overlaps any other stored shapes
 
 ## Constraints
-- store the data into any type of database you wish, but it should not require an actual database server instance running in the target machine.
+
+Store the data into any type of database, but it should not require an actual database server instance running in the target machine.
 
 ## Design approach
 
@@ -24,7 +24,7 @@ Dasebase needs to be integral part of application, so opted to use in-memory dat
 
 ## Design Options
 
-Every create shape api requires validation against area overlap against all persisted shapes, hence following approach could be taken
+Every create shape api requires validation against area overlap against all persisted shapes. Some of design options taken into consideration are listed below. 
 
 ### Option1. Fetch All
 Fetch all shapes from database on every create shape api.
@@ -129,6 +129,16 @@ Run below command with appropriate parameter values (NAME,BOTTOM_LEFT_X,BOTTOM_L
 
 ```$ make clear-square-shapes```
 
+## Technical debt/ backlog
 
+Further improvements can be made, some of them are listed below to be prioritised based on the business needs. 
+
+* Enable Swagger2 with Api
+* Add Cucumber test suite
+* Further evaluations of design considerations to scale 
+* Docker implementation
+* Enhancement to include more shapes
+* Command line configurable properties to use other databases
+  
 
 
