@@ -101,7 +101,7 @@ Run below command with appropriate parameter values (NAME,BOTTOM_LEFT_X,BOTTOM_L
 
 ### Browser based Rest client 
 
-To use Postman/Firefox Rest client and use below 
+To use Postman/Firefox Rest client follow below steps. 
 
 #### Add square shapes
 
