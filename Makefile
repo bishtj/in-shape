@@ -10,15 +10,13 @@ BOTTOM_LEFT_X ?= 0
 BOTTOM_LEFT_Y ?= 0
 WIDTH ?= 5
 
-all: build run
+build: build-clean build-package
 
-clean:
+build-clean:
 	${MAVEN_CMD} clean
 
-package:
+build-package:
 	${MAVEN_CMD} package
-
-build: clean package
 
 run:
 	${JAVA_CMD} -jar ${BIN_PATH}/${JAR}
