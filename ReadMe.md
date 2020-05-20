@@ -28,7 +28,7 @@ Navigate to root directory and run below target using make command
  
 ## Steps to Run
 
-Please follow steps to run.
+Please follow steps to run. This step will start rest api server and ready to process any rest api calls.
 
 #### Requirement
 
@@ -91,12 +91,10 @@ Run below command with appropriate parameter values (NAME,BOTTOM_LEFT_X,BOTTOM_L
 
 To use Postman/Firefox Rest client and use below 
 
-* URL http://localhost:8080
+#### Add square shapes
 
-* Header : "Content-Type: application/json"
-
-* Body: add-square-shape
-
+* POST http://localhost:8080/api/v1/shape/square/create
+* Content-Type: application/json
 * Payload
      ```
         {                                                                                                        
@@ -107,6 +105,14 @@ To use Postman/Firefox Rest client and use below
            "width" : 5                                                                               
         }
   ```
+
+#### GET square shapes
+* GET http://localhost:8080/api/v1/shape/square
+* Content-Type: application/json
+
+#### CLEAR all square shapes
+* DELETE http://localhost:8080/api/v1/shape/square
+
 
 ## Constraints
 
