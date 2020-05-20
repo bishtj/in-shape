@@ -92,7 +92,6 @@ public class ShapeServiceTest extends AbstractBaseTest {
         shapeService.deleteSquareShapes();
 
         Mockito.verify(squareShapeRepository, times(1)).deleteAll();
-
     }
 
 

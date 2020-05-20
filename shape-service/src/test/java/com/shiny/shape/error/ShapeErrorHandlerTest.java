@@ -5,6 +5,10 @@ import com.shiny.shape.exception.ShapeOverlapException;
 import org.junit.Test;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+
+import java.util.Objects;
+
+import static java.util.Objects.requireNonNull;
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
@@ -19,7 +23,7 @@ public class ShapeErrorHandlerTest {
         ResponseEntity<ErrorResponse> overlap_error = shapeErrorHandler.handleError(new ShapeOverlapException(description));
 
         assertThat(overlap_error.getStatusCode().value(), is(HttpStatus.BAD_REQUEST.value()));
-        assertThat(overlap_error.getBody().getDescription(), is(description));
+        assertThat(requireNonNull(overlap_error.getBody()).getDescription(), is(description));
         assertThat(overlap_error.getBody().getErrorCode(), is("invalid request"));
     }
 
@@ -31,7 +35,7 @@ public class ShapeErrorHandlerTest {
         ResponseEntity<ErrorResponse> database_error = shapeErrorHandler.handleError(new ShapeDatabaseException(description));
 
         assertThat(database_error.getStatusCode().value(), is(HttpStatus.BAD_REQUEST.value()));
-        assertThat(database_error.getBody().getDescription(), is(description));
+        assertThat(requireNonNull(database_error.getBody()).getDescription(), is(description));
         assertThat(database_error.getBody().getErrorCode(), is("database error"));
     }
 
