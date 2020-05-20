@@ -39,9 +39,7 @@ Navigate to root directory and run below target using make command
 
 ```$ make run```
 
-## Api calls
-
-### Apis
+## Supported APIs
 
 The following apis are supported
 
