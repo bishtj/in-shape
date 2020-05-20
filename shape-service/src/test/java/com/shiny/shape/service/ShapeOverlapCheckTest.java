@@ -16,7 +16,8 @@ public class ShapeOverlapCheckTest {
         assertNoOverlap(squareShape(10,10, 10), squareShape(20,20,10));
         assertNoOverlap(squareShape(15,15, 10), squareShape(25,25,5));
         assertNoOverlap(squareShape(40,40, 10), squareShape(0,30,5));
-        assertNoOverlap(squareShape(0,0, 10), squareShape(20,20,20));
+        assertNoOverlap(squareShape(0,0, 10), squareShape(10,10,20));
+        assertNoOverlap(squareShape(10,10, 10), squareShape(20,20,20));
     }
 
     @Test
