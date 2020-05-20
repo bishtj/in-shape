@@ -22,7 +22,7 @@ run:
 	${JAVA_CMD} -jar ${BIN_PATH}/${JAR}
 
 
-add-shape:
+add-square-shape:
 	${CURL_CMD} -H "Content-Type: application/json" -XPOST ${URL}/api/v1/shape/square/create  -d'         \
     {                                                                                                     \
       "type" : "square",                                                                                  \
@@ -32,5 +32,8 @@ add-shape:
       "width" : '${WIDTH}'                                                                                \
     }'
 
-get-shapes:
+get-square-shapes:
 	${CURL_CMD} -H "Content-Type: application/json" -XGET ${URL}/api/v1/shape/square
+
+clear-square-shapes:
+	${CURL_CMD} -H "Content-Type: application/json" -XDELETE ${URL}/api/v1/shape/square
