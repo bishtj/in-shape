@@ -24,7 +24,7 @@ run:
 
 add-square-shape:
 	${CURL_CMD} -H "Content-Type: application/json" -XPOST ${URL}/api/v1/shape/square/create  -d'         \
-    {                                                                                                     \
+	{                                                                                                     \
       "type" : "square",                                                                                  \
       "name" : "'${NAME}'",                                                                               \
       "bottomLeftPointX" : '${BOTTOM_LEFT_X}',                                                            \

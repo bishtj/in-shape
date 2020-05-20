@@ -83,12 +83,12 @@ Run below command with appropriate parameter values (NAME,BOTTOM_LEFT_X,BOTTOM_L
 
 #### Overlap square shape test
 
-```$  make add-square-shape NAME=name1 BOTTOM_LEFT_X=9 BOTTOM_LEFT_Y=9 WIDTH=9```
+```$  make add-square-shape NAME=name3 BOTTOM_LEFT_X=9 BOTTOM_LEFT_Y=9 WIDTH=9```
 
 #### Unique name shape test
 
-```$  make add-square-shape NAME=name3 BOTTOM_LEFT_X=500 BOTTOM_LEFT_Y=500 WIDTH=20```
-```$  make add-square-shape NAME=name3 BOTTOM_LEFT_X=600 BOTTOM_LEFT_Y=600 WIDTH=20```
+```$  make add-square-shape NAME=name4 BOTTOM_LEFT_X=500 BOTTOM_LEFT_Y=500 WIDTH=20```
+```$  make add-square-shape NAME=name4 BOTTOM_LEFT_X=600 BOTTOM_LEFT_Y=600 WIDTH=20```
 
 #### CLEAR all square shapes
 
